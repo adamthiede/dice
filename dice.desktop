@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Dice Roller
+GenericName=Dice Roller
+Comment=Roll some dice in a compact GUI.
+Categories=Game;
+Keywords=dice
+Terminal=false
+Icon=dice
+X-Purism-FormFactor=Workstation;Mobile;
+Exec=dice
