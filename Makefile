@@ -6,10 +6,10 @@ endif
 default:build
 
 build:
-	valac --pkg gtk+-3.0 dice.vala -o dice
+	valac --pkg gtk4 dice2.vala -o dice
 
-b4:
-	valac --pkg gtk4 dice2.vala -o dice2
+gtk3:
+	valac --pkg gtk+-3.0 dice.vala -o dice1
 
 4:
 	gcc `pkg-config --cflags gtk4` dice2.c -o cdice2 `pkg-config --libs gtk4`
