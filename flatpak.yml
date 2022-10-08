@@ -15,7 +15,7 @@ modules:
   - name: dice-gui
     buildsystem: simple
     build-commands:
-      - tar xf dice-gui.tar.gz
+      - tar xf dice.tar.gz
       - ls
       - cd dice-2.0 && make build && PREFIX="${FLATPAK_DEST}/" make install
     sources:
