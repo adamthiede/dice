@@ -17,11 +17,11 @@ modules:
     build-commands:
       - tar xf dice-gui.tar.gz
       - ls
-      - cd dice-gui-1.4 && make build && PREFIX="${FLATPAK_DEST}/" make install
+      - cd dice-2.0 && make build && PREFIX="${FLATPAK_DEST}/" make install
     sources:
       - type: file
-        dest-filename: dice-gui.tar.gz
-        url: https://gitlab.com/elagost/dice-gui/-/archive/1.4/dice-gui-1.4.tar.gz
-        sha256: b4c43dc4c55ed917b342bf8753c2d27be1caac5e905d41b2bb3f033119a82b0b
+        dest-filename: dice.tar.gz
+        url: https://git.sr.ht/~elagost/dice/archive/2.0.tar.gz
+        sha256: 517270cf1a31536b45fa7818523c9daff1403e6491c3fb6d9ad31187789a83d0
         only-arches:
           - aarch64
