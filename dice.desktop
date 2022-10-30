@@ -9,3 +9,10 @@ Terminal=false
 Icon=dice
 X-Purism-FormFactor=Workstation;Mobile;
 Exec=dice
+
+Actions=cli
+
+[Desktop Action cli]
+Name=CLI
+Exec=dice-cli
+Terminal=true

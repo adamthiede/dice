@@ -1,18 +1,18 @@
 Summary: Roll some dice. 
 Name: dice-gui
-Version: 1.5
+Version: 2.0
 Release: 1%{?dist}
 License: GPL
-URL: https://gitlab.com/elagost/dice-gui
-Source: https://gitlab.com/elagost/dice-gui/-/archive/%{version}/dice-gui-%{version}.tar.gz
+URL: https://git.sr.ht/~elagost/dice
+Source: https://git.sr.ht/~elagost/dice/archive/%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
 BuildRequires:  vala
-BuildRequires:  gtk3-devel
+BuildRequires:  gtk4-devel
 BuildRequires:  python3
 
-Requires: gtk3
+Requires: gtk4
 Requires: python3
 Requires: desktop-file-utils
 
