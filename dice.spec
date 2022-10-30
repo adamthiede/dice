@@ -22,7 +22,7 @@ Requires: desktop-file-utils
 A GUI and Python CLI to roll dice.
 
 %prep
-%setup
+%setup -n dice
 
 %build
 make
