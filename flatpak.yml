@@ -17,11 +17,11 @@ modules:
     build-commands:
       - tar xf dice.tar.gz
       - ls
-      - cd dice-2.0 && make build && PREFIX="${FLATPAK_DEST}/" make install
+      - cd dice-2.1 && make build && PREFIX="${FLATPAK_DEST}/" make install
     sources:
       - type: file
         dest-filename: dice.tar.gz
-        url: https://git.sr.ht/~elagost/dice/archive/2.0.tar.gz
-        sha256: 517270cf1a31536b45fa7818523c9daff1403e6491c3fb6d9ad31187789a83d0
+        url: https://git.sr.ht/~elagost/dice/archive/2.1.tar.gz
+        sha256: 4cf0f130686211857aab695dcfdebe2e6fc3968e50840390e230b1b1c83466ec
         only-arches:
           - aarch64
