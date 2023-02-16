@@ -1,8 +1,6 @@
-// Save this code as "hello_world.vala"
 int main (string[] argv) {
     // Create a new application
-    var app = new Gtk.Application ("com.example.GtkApplication",
-                                   GLib.ApplicationFlags.FLAGS_NONE);
+    var app = new Gtk.Application ("com.elagost.dice",GLib.ApplicationFlags.SEND_ENVIRONMENT);
 
     app.activate.connect (() => {
         // Create a new window
@@ -16,19 +14,18 @@ int main (string[] argv) {
         var box = new Gtk.Box (Gtk.Orientation.VERTICAL,0);
 
 		// Add things to put into the box
-		// working
         var rollButton = new Gtk.Button.with_label ("Roll!");
         var coinButton = new Gtk.Button.with_label ("Flip Coin");
         var count_box=new Gtk.SpinButton.with_range(1,1000,1);
-        var countlabel=new Gtk.Label (" Number of Dice ");
+        var countlabel=new Gtk.Label ("Number of Dice");
         var die_box=new Gtk.SpinButton.with_range(2,1000,1);
-        var dielabel=new Gtk.Label (" Sides ");
+        var dielabel=new Gtk.Label ("Sides");
         var mod_box=new Gtk.SpinButton.with_range(0,100,1);
-        var mod_label=new Gtk.Label (" Mod ");
+        var mod_label=new Gtk.Label ("Mod");
 		box.set_spacing(10);
 
         var textZoneLabel=0;
-        var textZone = new Gtk.Label (textZoneLabel.to_string());
+        var textZone = new Gtk.Label (" ");
         textZone.set_max_width_chars(250);
         textZone.set_wrap(true);
 
@@ -85,7 +82,8 @@ int main (string[] argv) {
         int[] values={4, 6, 8, 10, 20, 100};
         for (int v=0;v<values.length;v++){
             int buttonval=values[v];
-            var button_v = new Gtk.Button.with_label (buttonval.to_string());
+			var	button_l = "D" + buttonval.to_string();
+            var button_v = new Gtk.Button.with_label (button_l);
             hbox.append(button_v);
             button_v.clicked.connect( () => {
                 die_box.value=buttonval;
@@ -97,15 +95,27 @@ int main (string[] argv) {
         window.set_child (box);
 		// Add items to box
 
-		box.append (countlabel);
-		box.append (count_box);
-		box.append (dielabel);
-        box.append (die_box);
+
+        var dbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL,0);
+        var dbox1 = new Gtk.Box (Gtk.Orientation.VERTICAL,0);
+        var dbox2 = new Gtk.Box (Gtk.Orientation.VERTICAL,0);
+        var dbox3 = new Gtk.Box (Gtk.Orientation.VERTICAL,0);
+
+		dbox1.append (countlabel);
+		dbox1.append (count_box);
+		dbox2.append (dielabel);
+        dbox2.append (die_box);
+        dbox3.append (mod_label);
+        dbox3.append (mod_box);
+		dbox.append (dbox1);
+		dbox.append (dbox2);
+		dbox.append (dbox3);
+		box.append (dbox);
 		box.append (hbox);
-        box.append (mod_label);
-        box.append (mod_box);
-        box.append (coinButton);
-        box.append (rollButton);
+        var buttonbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL,0);
+		buttonbox.append (coinButton);
+		buttonbox.append (rollButton);
+        box.append (buttonbox);
         box.append (textZone);
 
         window.present ();
