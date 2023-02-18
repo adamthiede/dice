@@ -1,0 +1,35 @@
+# Contributor: Adam Thiede <me@adamthiede.com>
+# Maintainer: Adam Thiede <me@adamthiede.com>
+pkgname=dice
+pkgver=2.2
+pkgrel=0
+pkgdesc="a gtk dice roller program"
+url="https://git.sr.ht/~elagost/dice"
+arch="all"
+license="GPL-3.0-only"
+depends="python3 gtk4.0"
+makedepends="gtk4.0-dev vala python3"
+checkdepends=""
+install=""
+subpackages=""
+source="$pkgname-$pkgver.tar.gz::https://git.sr.ht/~elagost/dice/archive/$pkgver.tar.gz"
+builddir="$srcdir/$pkgname-$pkgver"
+
+build() {
+	# Replace with proper build command(s)
+	make
+}
+
+check() {
+	# Replace with proper check command(s)
+	:
+}
+
+package() {
+	# Replace with proper package command(s)
+	PREFIX="$pkgdir"/usr/ make install
+}
+
+sha512sums="
+8fc89684bc8c227cd0c301c5cf9b0a22db53ed00ff2028c522919508030f7f215c316cafef207f1915a26197caac0d3acae3e1ed6b97610160df00113e41204c  dice-2.2.tar.gz
+"

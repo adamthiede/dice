@@ -1,10 +1,10 @@
 Summary: Roll some dice. 
 Name: dice-gui
-Version: master
+Version: 2.1
 Release: 1%{?dist}
 License: GPL
-URL: https://gitlab.com/elagost/dice-gui
-Source: https://gitlab.com/elagost/dice-gui/-/archive/master/dice-gui-master.tar.gz
+URL: https://git.sr.ht/~elagost/dice
+Source: https://git.sr.ht/~elagost/dice/archive/%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make

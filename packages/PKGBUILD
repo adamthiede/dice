@@ -1,0 +1,24 @@
+# Maintainer: Adam Thiede <me@adamthiede.com>
+
+pkgname=dice
+pkgver=2.2
+pkgrel=1
+pkgdesc="GTK3 Dice Roller with Python CLI"
+arch=(x86_64 aarch64)
+url="https://git.sr.ht/~elagost/dice"
+license=(GPL3)
+depends=(gtk3 python)
+makedepends=(make gtk4 vala python-pylint)
+provides=(dice-gui)
+source=("https://git.sr.ht/~elagost/dice/archive/$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd $pkgname-$pkgver
+    make
+}
+
+package() {
+    cd $pkgname-$pkgver
+    PREFIX="${pkgdir}/usr/" make install
+}

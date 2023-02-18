@@ -2,10 +2,7 @@
 
 ## simple dice roller project written with gtk and vala
 
-### Files:
-- dicevala: dice roller source code
-- dice: dice roller binary, built on Fedora 34, should work with any recent-ish Linux distro
-- dice.py: dice roller CLI written in python
+There's also `dice.py` that's a CLI written in Python.
 
 ### Build requirements:
 - vala compiler
@@ -27,10 +24,9 @@ to install systemwide:
 
 ## Packages:
 
-Flatpak available at [my signal flatpak repo site](https://elagost.com/flatpak/)
+Linux aarch64 Flatpak available at [my flatpak repo site](https://elagost.com/flatpak/)
 
 After adding the remote, `flatpak install com.elagost.Dice`
 
 It can be run from ui, or the dice-cli command can be run with `flatpak run --command=dice-cli com.elagost.Dice`
 
-Arch/Fedora packages coming soon. Work on the pkgbuild/spec file is incomplete.
